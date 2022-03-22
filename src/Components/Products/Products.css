@@ -6,11 +6,12 @@
 .products{
     /* border:1px solid blue; */
     width: 300;
-    height: 570px;
+    height: 590px;
     padding: 7px;
     margin: 7px;
     border: 1px dotted salmon;
     border-radius: 7px;
+    position: relative;
 
 }
 .product-info{
@@ -27,4 +28,18 @@ font-style: normal;
 line-height: 25px;
 font-weight: 400;
 margin-top: 7px;
+}
+.button-cart{
+    border: none;
+    width: 100%;
+    background-color: #ffe0b3;
+    border-radius: 0 0 8px 8px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.button-cart:hover{
+    background-color:orange;
+    font-weight: bold;
+    color: white;
 }
