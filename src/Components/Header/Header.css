@@ -4,4 +4,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: 140px;
+    padding-right: 140px;
+}
+.header a{
+    text-decoration: none;
+    margin-left: 36px;
+    font-size: 17px;
+    color:#ffff
+}
+.header a:hover{
+    color:aliceblue;
+    font-weight: bolder;
+    background-color:rgb(49, 49, 48);
 }
