@@ -1,12 +1,12 @@
 .products img{
-    width: 395px;
-    height: 395px;
+    width: 295px;
+    height: 295px;
     border-radius: 8px;
 }
 .products{
     /* border:1px solid blue; */
-    width: 300;
-    height: 590px;
+    width: 200;
+    height: 500px;
     padding: 7px;
     margin: 7px;
     border: 1px dotted gray;
