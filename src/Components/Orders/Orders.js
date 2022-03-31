@@ -1,14 +1,21 @@
 import React from 'react';
 import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useProducts';
+import ReviewItem from '../ReviewItem/ReviewItem';
+import Cart from '../Cart/Cart';
 
 const Orders = () => {
     const [products, setProducts] = useProducts();
     const [cart, setCart] = useCart(products)
     return (
-        <div>
-            <h1>this is orders: {products.length}</h1>
-            <p>Cart has:{cart.length}</p>
+        <div className='shop-container'>
+            <div className="products-container">
+                {cart.map(product => <ReviewItem key={product.id} product={product}></ReviewItem>)}
+            </div>
+            <div className="cart-container">
+                <Cart cart={cart}></Cart>
+            </div>
+
         </div>
     );
 };
