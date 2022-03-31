@@ -18,3 +18,19 @@
     display: flex;
     justify-content: space-between;
 }
+
+.review-item .remove-item{
+    display: flex;
+    align-items: center;
+}
+.remove-item .delete-button{
+    background-color: rgba(235, 87, 87, 0.3);
+    border: 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+.delete-icon{
+    font-size: 27px;
+    color: rgba(235, 87, 87, 1);
+}
