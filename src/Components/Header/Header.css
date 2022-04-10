@@ -1,4 +1,4 @@
-.header{
+.header {
     height: 80px;
     background-color: #1c2b35;
     display: flex;
@@ -7,14 +7,17 @@
     padding-left: 140px;
     padding-right: 140px;
 }
-.header a{
+
+.header a {
     text-decoration: none;
     margin-left: 36px;
     font-size: 17px;
-    color:#ffff
+    color: #ffff;
+    font-weight: bold;
 }
-.header a:hover{
-    color:aliceblue;
-    font-weight: bolder;
-    background-color:rgb(49, 49, 48);
+
+.header a:hover {
+    color: aliceblue;
+    font-weight: bold;
+    background-color: rgb(49, 49, 48);
 }
