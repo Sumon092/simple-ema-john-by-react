@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Shipment = () => {
+    const [user] = useAuthState(auth);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -30,17 +33,17 @@ const Shipment = () => {
                     <h2 className='form-title'>Shipping information</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="input-group">
-                            <label htmlFor="name">Name</label>
-                            <input onBlur={handleNameBlur} type="text" name="name" id="" placeholder='Enter your name' />
+                            <label htmlFor="name">Your Name</label>
+                            <input onBlur={handleNameBlur} type="text" name="name" id="" placeholder='Enter your name' required />
                         </div>
                         <div className="input-group">
-                            <label htmlFor="email">Email</label>
-                            <input onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Enter your email' />
+                            <label htmlFor="email">Your Email</label>
+                            <input onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Enter your email' required value={user?.email} readOnly />
                         </div>
 
                         <div className="input-group">
-                            <label htmlFor="phone">Phone</label>
-                            <input onBlur={handleAddressBlur} type="text" name="phone" id="" placeholder='Enter your phone' />
+                            <label htmlFor="phone">Your Phone Number</label>
+                            <input onBlur={handleAddressBlur} type="text" name="phone" id="" placeholder='Enter your phone' required />
                         </div>
                         <div className="input-group">
                             <label htmlFor="address">Address</label>
