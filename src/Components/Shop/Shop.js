@@ -11,7 +11,7 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
     // useEffect(() => {
-    //     fetch('products.json')
+    //     fetch('http://localhost:5000/product')
     //         .then(res => res.json())
     //         .then(data => setProducts(data));
     // }, []);
@@ -56,7 +56,7 @@ const Shop = () => {
             <div className="products-container">
                 {
                     products.map(product => <Products
-                        key={product.id}
+                        key={product._id}
                         product={product}
                         handleAddToCart={handleAddToCart}
                     ></Products>)
