@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useProducts';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
@@ -8,7 +9,7 @@ import './Shop.css'
 
 const Shop = () => {
     // const [products, setProducts] = useProducts();//use our own state
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useCart();
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(10);
@@ -31,24 +32,24 @@ const Shop = () => {
             })
     }, [])
 
-    useEffect(() => {
-        console.log('local storage first line');
-        const storedCart = getStoredCart();
-        const savedCart = [];
-        // console.log(storedCart);
-        for (const id in storedCart) {
-            const addedProduct = products.find(product => product._id === id);
-            if (addedProduct) {
-                const quantity = storedCart[id];
-                addedProduct.quantity = quantity;
-                savedCart.push(addedProduct);
-            }
-            // console.log(addedProduct);
-        }
-        setCart(savedCart);
-        console.log('local storage finished');
+    // useEffect(() => {
+    //     console.log('local storage first line');
+    //     const storedCart = getStoredCart();
+    //     const savedCart = [];
+    //     // console.log(storedCart);
+    //     for (const id in storedCart) {
+    //         const addedProduct = products.find(product => product._id === id);
+    //         if (addedProduct) {
+    //             const quantity = storedCart[id];
+    //             addedProduct.quantity = quantity;
+    //             savedCart.push(addedProduct);
+    //         }
+    //         // console.log(addedProduct);
+    //     }
+    //     setCart(savedCart);
+    //     console.log('local storage finished');
 
-    }, [products])
+    // }, [products])
 
     const handleAddToCart = (selectedProduct) => {
         let newCart = [];
