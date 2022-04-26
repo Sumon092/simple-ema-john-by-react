@@ -21,6 +21,6 @@
 }
 
 .pagination .selected {
-    background-color: orange;
+    background-color: rgb(255, 8, 0);
     color: white;
 }
